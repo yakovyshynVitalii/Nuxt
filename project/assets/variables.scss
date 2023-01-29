@@ -1,0 +1,50 @@
+// colors
+
+$Black_900: #161c17;
+$Black_700: #67736e;
+$Black_600: #9ca3a5;
+$Black_500: #bac0bf;
+$Black_300: #cdd4d3;
+$Black_100: #e8edeb;
+$Black_50: #eff3f1;
+$Black_W_100: #fff;
+
+$Bl_25: #a7a7a7;
+
+$Green_800: #6bb613;
+$Green_700: #25740e;
+$Green_600: #379c1b;
+$Green_500: #45c322;
+$Green_400: #6acf4e;
+$Green_300: #8fdb7a;
+$Green_200: #9dce65;
+$Green_100: #dcf3d0;
+$Green_50: #edfae7;
+
+$Yellow_100: #ffb865;
+$Yellow_75: #f9d7af;
+$Yellow_50: #f9d7af;
+
+$Tech_Suxes_120: #22c55e;
+$Tech_100: #f07878;
+$Tech_atention_80: #ffcb9b;
+
+// animation
+
+$defaultAnimationTime: 0.3s;
+
+// size
+
+$sizes: (
+  "xs": 320px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 1000px,
+  "xl": 1200px,
+);
+
+// margins
+
+$defaultMargin: clamp((1000px / 19) * 1.6, (100vw / 19) * 1.6, 160px);
+$halfMargin: clamp((1000px / 19) * 0.96, (100vw / 19) * 0.96, 96px);
+$middleMargin: clamp((1000px / 19) * 0.64, (100vw / 19) * 0.64, 64px);

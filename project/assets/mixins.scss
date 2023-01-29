@@ -1,0 +1,655 @@
+@mixin fontSize96 {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 72px;
+}
+
+@mixin fontSize64 {
+  font-size: 64px;
+  line-height: 72px;
+}
+
+@mixin fontSize64Medium {
+  @include fontSize64;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@mixin fontSize48 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+}
+
+@mixin fontSize48Medium {
+  @include fontSize48;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@mixin fontSize32 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin fontSize32Medium {
+  @include fontSize32;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+@mixin fontSize24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin fontSize24Medium {
+  @include fontSize24;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+@mixin fontSize20 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin fontSize20Medium {
+  @include fontSize20;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+@mixin fontSize18 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin fontSize18_600 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+@mixin fontSize18Medium {
+  @include fontSize18;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@mixin fontSize18Bold {
+  @include fontSize18;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@mixin fontSize16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin fontSize16_600 {
+  @include fontSize16;
+  font-weight: 600;
+}
+
+@mixin fontSize16Medium {
+  @include fontSize16;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@mixin fontSize16Bold {
+  @include fontSize16;
+  font-weight: 700;
+}
+
+@mixin fontSize16_800 {
+  @include fontSize16;
+  font-weight: 800;
+}
+
+@mixin fontSize14 {
+  font-size: 14px;
+  line-height: 22px;
+}
+@mixin fontSize14_600 {
+  @include fontSize14;
+  font-weight: 600;
+}
+
+@mixin fontSize14Medium {
+  @include fontSize14;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+@mixin fontSize14Bold {
+  @include fontSize14;
+  font-weight: 700;
+}
+
+@mixin fontSize12 {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+@mixin fontSize12Medium {
+  @include fontSize12;
+  font-weight: 600;
+}
+
+@mixin fontSize12Bold {
+  @include fontSize12;
+  font-weight: 700;
+}
+
+// media size
+
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+
+// global blocks mixins
+
+//@mixin productWrapperMob {
+//  padding-left: 10vw;
+//  padding-right: 10vw;
+//  width: 100%;
+//  overflow: hidden;
+//}
+//
+@mixin fullPseudoElement {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin defaultScroll {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid $Black_300;
+    border-radius: 10px;
+  }
+  scrollbar-color: $Black_300 $Black_W_100;
+  scrollbar-width: thin;
+}
+
+@mixin noneScroll {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+@mixin defaultWrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1730px;
+  width: 100%;
+  min-width: 1000px;
+  // overflow: hidden;
+}
+
+@mixin defaultWrapperMob {
+  padding: 0 5vw;
+}
+
+@mixin defaultTextStyle {
+  & > * {
+    &:not(:first-child) {
+      margin-top: 48px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .warning {
+    display: block;
+    position: relative;
+    padding-left: 50px;
+
+    @include fontSize16;
+    font-weight: 700;
+    font-style: italic;
+    color: $Black_700;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: calc(50% - 9px);
+      width: 20px;
+      height: 17px;
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='17' viewBox='0 0 20 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.5025 0.832302C9.17576 -0.277436 10.8242 -0.277433 11.4975 0.832306L19.7554 14.4439C20.4406 15.5733 19.6048 17 18.2579 17H1.74206C0.395235 17 -0.440613 15.5733 0.244556 14.4439L8.5025 0.832302ZM9.13038 10.2233V5.98779H10.8696V10.2233H9.13038ZM9.13038 11.9174V13.6116H10.8696V11.9174H9.13038Z' fill='%23181818'/%3E%3C/svg%3E%0A");
+    }
+  }
+  .info {
+    padding-left: 150px;
+    position: relative;
+
+    color: $Black_900;
+    @include fontSize20;
+
+    display: block;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+    }
+    &::after {
+      left: 80px;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: $Green_500;
+    }
+
+    & p {
+      color: $Black_900;
+      @include fontSize20Medium;
+      line-height: 28px;
+      letter-spacing: 0.07em;
+    }
+  }
+  p {
+    @include fontSize18;
+    color: $Black_700;
+  }
+  h3 {
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    color: $Black_900;
+    @include fontSize32;
+  }
+
+  ol {
+    counter-reset: counter;
+    li {
+      counter-increment: counter;
+      &::before {
+        top: 0;
+
+        content: counter(counter);
+
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: $Green_500;
+        @include fontSize18;
+      }
+    }
+  }
+  ul {
+    li {
+      &::before {
+        content: "";
+
+        top: 8px;
+        width: 8px;
+        height: 8px;
+
+        background-color: $Green_500;
+      }
+    }
+  }
+  ul,
+  ol {
+    & > * {
+      &:not(:first-child) {
+        margin-top: 24px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+    list-style: none;
+    li {
+      padding-left: 50px;
+      @include fontSize18;
+      color: $Black_700;
+
+      position: relative;
+      &::before {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  blockquote {
+    margin-left: 20px;
+    padding: 50px;
+    position: relative;
+
+    background: $Black_50;
+    border-radius: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 15px;
+
+      width: 42px;
+      height: 40px;
+      background: url("/svg/icons/quotes.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    & > * {
+      @include fontSize20Medium;
+      letter-spacing: 0.07em;
+      color: $Black_900;
+
+      &:not(:first-child) {
+        margin-top: 24px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  img {
+    font-size: 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    &.align-right {
+      margin-left: auto;
+    }
+    &.align-left {
+      margin-right: auto;
+    }
+    &.align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  & > hr {
+    padding: 24px 0;
+    border: 0;
+    display: block;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+      height: 1px;
+      background-color: $Black_100;
+      width: 100%;
+    }
+  }
+  table {
+    max-width: 100%;
+    display: block;
+    overflow: auto;
+    border: 0;
+
+    border-collapse: collapse;
+    thead {
+      tr {
+        td {
+          padding: 16px;
+          @include fontSize20Medium;
+          color: $Black_900;
+          border: 1px solid $Black_100;
+          background: $Black_50;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          padding: 16px;
+          @include fontSize18;
+          color: $Black_700;
+          border: 1px solid $Black_100;
+        }
+      }
+    }
+  }
+}
+
+@mixin defaultTextStyleMob {
+  & > * {
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .warning {
+    display: block;
+    padding-left: Min(30px, 7.5vw);
+    position: relative;
+
+    @include fontSize14;
+    font-weight: 700;
+    font-style: italic;
+    color: $Black_700;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: calc(50% - 7px);
+      width: 18px;
+      height: 15px;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='17' viewBox='0 0 20 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.5025 0.832302C9.17576 -0.277436 10.8242 -0.277433 11.4975 0.832306L19.7554 14.4439C20.4406 15.5733 19.6048 17 18.2579 17H1.74206C0.395235 17 -0.440613 15.5733 0.244556 14.4439L8.5025 0.832302ZM9.13038 10.2233V5.98779H10.8696V10.2233H9.13038ZM9.13038 11.9174V13.6116H10.8696V11.9174H9.13038Z' fill='%23181818'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  .info {
+    padding-left: Min(30px, 7.5vw);
+    position: relative;
+
+    color: $Black_900;
+    @include fontSize16Bold;
+
+    display: block;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: $Green_500;
+    }
+
+    & p {
+      color: $Black_900;
+      @include fontSize16Bold;
+      letter-spacing: 0.05em;
+      line-height: 28px;
+    }
+  }
+
+  p {
+    @include fontSize14;
+    color: $Black_700;
+  }
+
+  h3 {
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    color: $Black_900;
+    @include fontSize18;
+  }
+
+  ol {
+    counter-reset: counter;
+
+    li {
+      counter-increment: counter;
+      &::before {
+        top: 0;
+
+        content: counter(counter);
+
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: $Green_500;
+        @include fontSize14;
+      }
+    }
+  }
+
+  ul {
+    li {
+      &::before {
+        content: "";
+
+        top: 8px;
+        width: 8px;
+        height: 8px;
+
+        background-color: $Green_500;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    & > * {
+      &:not(:first-child) {
+        margin-top: Min(16px, 4vw);
+      }
+      &:not(:last-child) {
+        margin-bottom: Min(16px, 4vw);
+      }
+    }
+    list-style: none;
+
+    li {
+      padding-left: Min(30px, 7.5vw);
+      @include fontSize14;
+      color: $Black_700;
+
+      position: relative;
+      &::before {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  blockquote {
+    margin-left: 10px;
+    padding: Min(30px, 7.5vw);
+
+    border-radius: 6px;
+    background: $Black_50;
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 10px;
+
+      width: 31px;
+      height: 30px;
+      background: url("/svg/icons/quotes.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    & > * {
+      @include fontSize18Bold;
+      color: $Black_900;
+
+      &:not(:first-child) {
+        margin-top: Min(12px, 4vw);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: Min(12px, 4vw);
+      }
+    }
+  }
+
+  img {
+    font-size: 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+
+    &.align-right {
+      margin-left: auto;
+    }
+
+    &.align-left {
+      margin-right: auto;
+    }
+
+    &.align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  & > hr {
+    padding: Min(8px, 2vw) 0;
+    border: 0;
+    display: block;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+      height: 1px;
+      background-color: $Black_100;
+      width: 100%;
+    }
+  }
+  table {
+    max-width: 100vw;
+    display: block;
+    overflow: auto;
+    border: 0;
+    margin: 0 -10vw;
+    padding: 0 10vw;
+    border-collapse: collapse;
+    tbody {
+      tr {
+        td {
+          padding: 5px 10px;
+          @include fontSize14;
+          color: $Black_700;
+          border: 1px solid $Green_500;
+        }
+      }
+    }
+  }
+}
