@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="nav">
-      <h3>Navigation</h3>
+      <h3 class="font-inter">Navigation</h3>
 
       <!-- Для коректного використання локалізації в nuxt-link потрібно використовувати -->
       <!-- localePath('маршрут') -->
