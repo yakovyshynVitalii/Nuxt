@@ -1,7 +1,5 @@
 <template>
-  <div class="page">
-    <div class="page__wrapper">{{ $t("language") }}</div>
-  </div>
+  <div class="page">Home page</div>
 </template>
 
 <script setup></script>

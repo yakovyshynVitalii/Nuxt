@@ -1,9 +1,5 @@
 <template>
-  <div class="default-layouts">
-    <main>
-      <slot />
-    </main>
-  </div>
+  <main>
+    <slot />
+  </main>
 </template>
-
-<script setup></script>
