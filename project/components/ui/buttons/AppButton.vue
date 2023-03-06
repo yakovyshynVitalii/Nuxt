@@ -71,11 +71,11 @@ defineProps({
     line-height: 16px;
   }
 
-  &[disabled] {
-    background: $Black--200;
-    color: $Black_W;
-    cursor: default;
-  }
+  //&[disabled] {
+  //  background: $Black--200;
+  //  color: $Black_W;
+  //  cursor: default;
+  //}
   &_size {
     &_medium {
       height: 40px;

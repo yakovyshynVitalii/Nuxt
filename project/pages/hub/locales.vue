@@ -6,9 +6,6 @@
       <!-- Для коректного використання локалізації в nuxt-link потрібно використовувати -->
       <!-- localePath('маршрут') -->
       <!-- деталі на https://i18n.nuxtjs.org/basic-usage/#nuxt-link-->
-
-      <NuxtLink :to="localePath('/')">Home</NuxtLink>
-      <NuxtLink :to="localePath('/locales')">Locales</NuxtLink>
     </div>
 
     <!-- Переключатель мов -->
@@ -17,19 +14,24 @@
     <div class="locales">
       <div class="locales__text"></div>
       <div class="locales__select">
-        <NuxtLink
+        <AppButton
           v-for="locale in availableLocales"
           :key="locale.code"
           :to="switchLocalePath(locale.code)"
-        >
-          {{ locale.name }}
-        </NuxtLink>
+          :title="locale.name"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import AppButton from "~/components/ui/buttons/AppButton.vue";
+
+definePageMeta({
+  layout: "hub",
+});
+
 // Логіка переключателя мов
 
 import { useI18n } from "#imports";

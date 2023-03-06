@@ -4,6 +4,7 @@
       <div class="hub-app__nav">
         <ul class="hub-app__nav-list">
           <li><NuxtLink :to="localePath('/hub')">Home</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/hub/locales')">Locales</NuxtLink></li>
           <li><NuxtLink :to="localePath('/hub/device')">Device</NuxtLink></li>
           <li><NuxtLink :to="localePath('/hub/swiper')">Swiper</NuxtLink></li>
         </ul>
