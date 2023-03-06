@@ -1,2 +1,8 @@
-@import "mixins";
-@import "variables";
+// Variables
+@import "./variables";
+@import "./mixins";
+
+// Application
+@import "./fonts";
+@import "./hidden";
+@import "./global";

@@ -1,27 +1,33 @@
 <template>
-  <div class="swiper-section">
-    <swiper
-      :pagination="{
-        type: 'fraction',
-      }"
-      :navigation="true"
-      :modules="modules"
-      class="mySwiper"
-    >
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
-    </swiper>
+  <div class="swiper-app">
+    <div class="swiper-section">
+      <swiper
+        :pagination="{
+          type: 'fraction',
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
 <script setup>
+definePageMeta({
+  layout: "hub",
+});
+
 // структуру та роботу слайдера можна розгялнути https://swiperjs.com/vue
 // тут можна розгялнути готові слайдери https://swiperjs.com/demos
 // але їх синтаксис потрібно перевести в vue 3 composition Api
@@ -44,22 +50,11 @@ const modules = [Pagination, Navigation];
 </script>
 
 <style>
-#app {
-  height: 100%;
-}
-html,
-body {
-  position: relative;
-  height: 100%;
-}
+.swiper-app {
+  width: 100%;
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .swiper {

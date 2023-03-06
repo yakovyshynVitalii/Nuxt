@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  line-height: 1;
+  padding: 0 0;
+  margin: 0 0;
+
+  font-family: $Font-intro;
+  font-weight: 400;
+  color: $Black_900;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  color: $Black_900;
+  text-decoration: none;
+  cursor: pointer;
+}

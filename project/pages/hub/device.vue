@@ -7,6 +7,10 @@
 <script setup>
 import { computed } from "vue";
 
+definePageMeta({
+  layout: "hub",
+});
+
 // щоб використовувати достатньо вивести необхідну змінну з useDevice()
 // детальніше https://www.npmjs.com/package/@nuxtjs/device
 

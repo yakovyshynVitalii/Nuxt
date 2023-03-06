@@ -45,16 +45,6 @@ const availableLocales = computed(() => {
 </script>
 
 <style lang="scss">
-.page {
-  @include defaultWrapper;
-
-  &__wrapper {
-    height: 100px;
-    border: 1px solid $Black_900;
-    padding: 15px;
-  }
-}
-
 .nav {
   display: flex;
   align-items: center;
